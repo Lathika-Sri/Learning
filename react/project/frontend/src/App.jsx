@@ -6,6 +6,7 @@ import About from './pages/About'
 import Contact from './pages/Contact';
 import Service from './pages/Service';
 import Navbar from './components/Navbar';
+import State from './hooks/State';
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
       <Route path="/about" Component={About}></Route>
       <Route path="/contact" Component={Contact}></Route>
       <Route path="/service" Component={Service}></Route>
+      <Route path="/state" element={<State/>}/> 
+      
     </Routes>
     
     <First name = "lathika" department ="IT"

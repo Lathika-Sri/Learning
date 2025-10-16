@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-export const Navbar = () => {
+import './Navbar.css';
+const Navbar = () => {
   return (
     <div className="link">
     <Link to ="/home">Home</Link>

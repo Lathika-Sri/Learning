@@ -7,8 +7,9 @@ export const Home = () => {
       <h1>Home</h1>
     <ul>
       <li>
-        <Link to = '/State'>useState</Link>
+        <Link to = '/state'>useState</Link>
       </li>
+      <li> <Link to ='/effect'>useEffect</Link></li> 
     </ul>
 
     </div>

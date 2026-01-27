@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from "react"
+//Hooks :
  const State = () => {
     const[count,setCount] = useState(0) //first parameter-intial, second parameter - modify that first parameter
     const[like,setLike]= useState(0)
@@ -9,6 +10,7 @@ import {useState} from "react"
         <h1>UseState examples</h1>
         <h2>Count:{count}</h2>   
         <button onClick={()=>setCount(count+1)}>Increase</button> 
+        <button onClick={()=>setCount(count-1)}>Decrease</button> 
         {/* /**multiple rendering */}
         <button onClick={()=>setCount(prev=>prev+1)}>add</button>
         <hr />

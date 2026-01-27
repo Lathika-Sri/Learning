@@ -7,19 +7,25 @@ import Contact from './pages/Contact';
 import Service from './pages/Service';
 import Navbar from './components/Navbar';
 import State from './hooks/State';
+import Effect from './hooks/Effect';
+import Parent from './components/Parent';
+import Form from './hooks/Form';
 
 const App = () => {
   return (
     <>
+    <Parent/>
     <Navbar />
     <Routes>
       <Route path="/home" Component={Home}></Route>
       <Route path="/about" Component={About}></Route>
       <Route path="/contact" Component={Contact}></Route>
       <Route path="/service" Component={Service}></Route>
-      <Route path="/state" element={<State/>}/> 
+      <Route path="/state" element={<State/>}/>
+      <Route path="/effect" element={<Effect/>}/> 
       
     </Routes>
+    <Form/>
     
     <First name = "lathika" department ="IT"
     skills = {['MERN','Java','HTML','CSS','JS']} projectsdone = {['hackthon 2024,2025','app devlopment-lightline',

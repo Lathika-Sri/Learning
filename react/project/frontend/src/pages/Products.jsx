@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 const Products = () => {
-    const products = [
-        {id:1,name:"Laptop",price:"30000"},
-        {id:2,name:"Mouse",price:"15000"},
-        {id:3,name:"Mobile",price:"30000"}
-    ]
+  const [product, setProduct] = useState([])
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => setProduct(data))
+  }, [])
+
   return (
     <div>
-        <h1>Products</h1>
-        {products.map((product)=>(
-            <div key = {product.id}>
-                <h4>{product.name}</h4>
-                <h5>{product.price}</h5>
+      <h1>Products</h1>
 
-                <Link to = {''}>
-                  View details
-                </Link>
-            </div>
-        ))}
+      {product.map((item) => (
+        <div key={item.id}>
+          <h4>{item.title}</h4>
+          <h5>₹ {item.price}</h5>
+
+          <Link to={`/product/${item.id}`}>
+            View details
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }

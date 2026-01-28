@@ -1,0 +1,112 @@
+npm create vite@latest
+Project name : React-app
+Package name : react-app (lowercase)
+framework : react
+variant : Javascript
+
+
+Basics  of React:
+{
+    1. Javascript library
+    2. component based structure -> resuable piece of ui
+    3. components two types : 
+        old (class components)
+        now current (functional components)
+    4. functional components : function that returns jsx (Javascript + html) 
+    5. React uses VDOM (virtual DOM (document object model) -> Tree like structure in HTML)
+    6. SPA (single page application) using react router and virtual dom 
+    7. inital page : index.html (root file)
+    8. rafce extension (es7+react)
+        rafce -> react arrow function component export
+    9. index.css (Global css)
+
+    10. when we create a Component file with (Uppercase of first letter)  Ex : Profile.jsx
+    11. In App.jsx only one parent tag 
+    <>
+      {multiple tags}
+    </> {It is know as Fragment tag}
+
+    12. comment tag in react : {/** self closing tag */}
+
+    13. props(properties) : passing data from one component to another component
+
+    14. Without destructuring :
+        const Profile = (props) => {
+        return (
+            <div>
+                <h1>I am {props.name}</h1> {/** property accessing */}
+            </div>
+        )
+        }
+
+        export default Profile
+
+    15. With destructuring : (for multiple datas)
+        const Profile = ({name}) => {
+        return (
+            <div>
+                <h1>I am {name}</h1> {/** property accessing */}
+            </div>
+        )
+        }
+
+        export default Profile
+
+
+        //multiple props:
+        const Profile = ({name,age}) => {
+        return (
+            <div>
+                <h1>I am {name}, Age is {age}</h1> {/** property accessing */}
+            </div>
+           )
+        }
+
+    16. whenever we work with currly braces the keyword return must!!!
+
+    17. UseState syntax :
+         const[variable, setVariable] = useState(intial state)
+
+    18. state -> data that changes over time
+
+    19. one way data flow passes only from parent to child only using callback we pass data from child to parent
+
+    20. Life cycle of react :
+        mount -> adding element to DOM
+        update -> updating element through state/prop change
+        unMount -> removes element from DOM
+    
+    21. useEffect syntax : basically it is used to handles sideEffect
+
+        useEffect(()=>{},[dependancies]) dependancies is completely optional, but mostly with dependancies is used.
+        useEffect(()=>{},[dependancies]) -> runs only on initial render
+        useEffect(()=>{},[state/prop]) -> runs only on initial and when state, props updated
+        
+
+        unMount usage :
+            useEffect(() => {return()}, []) -> unMount
+
+    22. rendering : page consists of state and props according to that loading things is known as rendering
+
+    23. difference between state variable and normal variable :
+            state variable when updating ui changes showed but it not possible on normal varibale. 
+
+    24. useReducer -> complex state logic
+          many actions on single state
+
+          syntax :
+          const[state, dispatch] = useReducer(reducerfun,initialstate)
+
+    25. useContext :
+         -> to avoid prop drilling
+         -> declare data global to access anywhere
+            for eg : (5 components)
+                App->Home->Parent->Child->GrandChild
+                
+        Steps :
+         1.createContext 
+         2.context Provider
+         3.useContext
+}
+
+
